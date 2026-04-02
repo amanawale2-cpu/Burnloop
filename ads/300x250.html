@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=300">
+  <title>BurnLoop — 300x250</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 300px;
+      height: 250px;
+      overflow: hidden;
+      font-family: Helvetica, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #3B1D8A;
+    }
+
+    .ad {
+      width: 300px;
+      height: 250px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    /* Background glow blobs */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(50px);
+      opacity: 0.4;
+    }
+    .blob-1 {
+      width: 180px; height: 180px;
+      background: #F97316;
+      top: -60px; right: -40px;
+    }
+    .blob-2 {
+      width: 140px; height: 140px;
+      background: #C026D3;
+      bottom: -40px; left: -30px;
+    }
+
+    /* Logo row */
+    .logo-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #F97316 0%, #C026D3 50%, #6D28D9 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .logo-name {
+      font-size: 18px;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: -0.5px;
+    }
+
+    /* Hero content */
+    .hero {
+      position: relative;
+      z-index: 2;
+    }
+
+    .tagline {
+      font-size: 11px;
+      font-weight: 600;
+      color: #C4B5FD;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 6px;
+    }
+
+    .headline {
+      font-size: 26px;
+      font-weight: 900;
+      color: #FFFFFF;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+
+    .headline span {
+      background: linear-gradient(135deg, #F97316, #C026D3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Stats row */
+    .stats {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-num {
+      font-size: 22px;
+      font-weight: 900;
+      color: #F97316;
+      line-height: 1;
+      letter-spacing: -0.5px;
+    }
+
+    .stat-label {
+      font-size: 9px;
+      font-weight: 600;
+      color: #C4B5FD;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-top: 2px;
+    }
+
+    .stat-divider {
+      width: 1px;
+      background: rgba(255,255,255,0.15);
+    }
+
+    /* CTA */
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, #F97316 0%, #C026D3 50%, #6D28D9 100%);
+      color: #FFFFFF;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 18px;
+      border-radius: 9999px;
+      text-decoration: none;
+      letter-spacing: -0.1px;
+    }
+
+    .cta svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* Bottom row */
+    .bottom-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+    }
+
+    .badge {
+      font-size: 9px;
+      font-weight: 600;
+      color: #C4B5FD;
+      background: rgba(255,255,255,0.1);
+      padding: 4px 8px;
+      border-radius: 9999px;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+  </style>
+</head>
+<body>
+  <div class="ad">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <!-- Logo -->
+    <div class="logo-row">
+      <div class="logo-icon">
+        <svg viewBox="0 0 20 20" fill="none">
+          <circle cx="10" cy="10" r="7" stroke="white" stroke-width="2.5" stroke-dasharray="4 2"/>
+          <path d="M10 6v4l2.5 2" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="logo-name">BurnLoop</span>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="tagline">AI Fitness Coach</div>
+      <div class="headline">Burn Smarter,<br>Not <span>Harder</span></div>
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-num">2×</div>
+          <div class="stat-label">Faster</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <div class="stat-num">AI</div>
+          <div class="stat-label">Powered</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <div class="stat-num">∞</div>
+          <div class="stat-label">Plans</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="bottom-row">
+      <a class="cta" href="#">
+        Start Free
+        <svg viewBox="0 0 14 14" fill="none">
+          <path d="M2 7h10M8 3l4 4-4 4" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <div class="badge">Health-Aware</div>
+    </div>
+  </div>
+</body>
+</html>

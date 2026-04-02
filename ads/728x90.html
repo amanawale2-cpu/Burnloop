@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=728">
+  <title>BurnLoop — 728x90 Leaderboard</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 728px;
+      height: 90px;
+      overflow: hidden;
+      font-family: Helvetica, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #3B1D8A;
+    }
+
+    .ad {
+      width: 728px;
+      height: 90px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      gap: 0;
+    }
+
+    /* Background gradient overlay */
+    .bg-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, #3B1D8A 0%, #4c2a9e 50%, #3B1D8A 100%);
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(40px);
+      opacity: 0.35;
+    }
+    .blob-1 {
+      width: 120px; height: 120px;
+      background: #F97316;
+      top: -40px; left: 200px;
+    }
+    .blob-2 {
+      width: 100px; height: 100px;
+      background: #C026D3;
+      bottom: -40px; right: 250px;
+    }
+
+    /* Logo */
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+      z-index: 2;
+      flex-shrink: 0;
+      margin-right: 28px;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #F97316 0%, #C026D3 50%, #6D28D9 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .logo-name {
+      font-size: 22px;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: -0.5px;
+    }
+
+    /* Divider */
+    .divider {
+      width: 1px;
+      height: 48px;
+      background: rgba(255,255,255,0.15);
+      flex-shrink: 0;
+      margin-right: 28px;
+    }
+
+    /* Headline */
+    .headline-section {
+      position: relative;
+      z-index: 2;
+      flex: 1;
+    }
+
+    .tagline {
+      font-size: 10px;
+      font-weight: 700;
+      color: #C4B5FD;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      margin-bottom: 3px;
+    }
+
+    .headline {
+      font-size: 22px;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+
+    .headline span {
+      background: linear-gradient(135deg, #F97316, #C026D3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Stats pills */
+    .stats-section {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+      z-index: 2;
+      margin: 0 28px;
+      flex-shrink: 0;
+    }
+
+    .stat-pill {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 6px 12px;
+    }
+
+    .stat-num {
+      font-size: 18px;
+      font-weight: 900;
+      color: #F97316;
+      line-height: 1;
+      letter-spacing: -0.3px;
+    }
+
+    .stat-label {
+      font-size: 8px;
+      font-weight: 700;
+      color: #C4B5FD;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-top: 2px;
+    }
+
+    /* CTA */
+    .cta-section {
+      position: relative;
+      z-index: 2;
+      flex-shrink: 0;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, #F97316 0%, #C026D3 50%, #6D28D9 100%);
+      color: #FFFFFF;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 12px 22px;
+      border-radius: 9999px;
+      text-decoration: none;
+      letter-spacing: -0.1px;
+      white-space: nowrap;
+    }
+
+    .cta svg {
+      width: 14px;
+      height: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="ad">
+    <div class="bg-gradient"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <!-- Logo -->
+    <div class="logo-section">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="8" stroke="white" stroke-width="2.5" stroke-dasharray="5 2.5"/>
+          <path d="M12 7v5l3 3" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="logo-name">BurnLoop</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Headline -->
+    <div class="headline-section">
+      <div class="tagline">AI-Powered Fitness Coach</div>
+      <div class="headline">Your <span>Health-Aware</span> Training Partner</div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-section">
+      <div class="stat-pill">
+        <div class="stat-num">2×</div>
+        <div class="stat-label">Results</div>
+      </div>
+      <div class="stat-pill">
+        <div class="stat-num">AI</div>
+        <div class="stat-label">Coach</div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section">
+      <a class="cta" href="#">
+        Start Free
+        <svg viewBox="0 0 14 14" fill="none">
+          <path d="M2 7h10M8 3l4 4-4 4" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

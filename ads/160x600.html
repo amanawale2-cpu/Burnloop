@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=160">
+  <title>BurnLoop — 160x600 Wide Skyscraper</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 160px;
+      height: 600px;
+      overflow: hidden;
+      font-family: Helvetica, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #3B1D8A;
+    }
+
+    .ad {
+      width: 160px;
+      height: 600px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 16px;
+    }
+
+    /* Background blobs */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(50px);
+      opacity: 0.4;
+    }
+    .blob-1 {
+      width: 140px; height: 140px;
+      background: #F97316;
+      top: -40px; right: -50px;
+    }
+    .blob-2 {
+      width: 120px; height: 120px;
+      background: #C026D3;
+      top: 200px; left: -50px;
+    }
+    .blob-3 {
+      width: 130px; height: 130px;
+      background: #7C3AED;
+      bottom: -30px; right: -40px;
+    }
+
+    /* Logo */
+    .logo-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 24px;
+    }
+
+    .logo-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #F97316 0%, #C026D3 50%, #6D28D9 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-icon svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .logo-name {
+      font-size: 20px;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: -0.5px;
+    }
+
+    /* Tagline */
+    .tagline {
+      font-size: 9px;
+      font-weight: 700;
+      color: #C4B5FD;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 20px;
+    }
+
+    /* Headline */
+    .headline {
+      font-size: 24px;
+      font-weight: 900;
+      color: #FFFFFF;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 20px;
+    }
+
+    .headline span {
+      background: linear-gradient(135deg, #F97316, #C026D3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Divider */
+    .divider {
+      width: 40px;
+      height: 2px;
+      background: linear-gradient(90deg, #F97316, #C026D3);
+      border-radius: 9999px;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Feature list */
+    .features {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 24px;
+    }
+
+    .feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .feature-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #F97316 0%, #C026D3 100%);
+      flex-shrink: 0;
+      margin-top: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .feature-dot svg {
+      width: 9px;
+      height: 9px;
+    }
+
+    .feature-text {
+      font-size: 11px;
+      font-weight: 600;
+      color: #FFFFFF;
+      line-height: 1.3;
+    }
+
+    .feature-sub {
+      font-size: 9px;
+      font-weight: 400;
+      color: #C4B5FD;
+      margin-top: 1px;
+    }
+
+    /* Stat */
+    .stat-block {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      padding: 12px;
+      text-align: center;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 20px;
+    }
+
+    .stat-num {
+      font-size: 36px;
+      font-weight: 900;
+      color: #F97316;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+    .stat-unit {
+      font-size: 16px;
+      font-weight: 700;
+      color: #F97316;
+    }
+
+    .stat-label {
+      font-size: 9px;
+      font-weight: 600;
+      color: #C4B5FD;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-top: 4px;
+    }
+
+    /* CTA */
+    .cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 100%;
+      background: linear-gradient(135deg, #F97316 0%, #C026D3 50%, #6D28D9 100%);
+      color: #FFFFFF;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 13px;
+      border-radius: 9999px;
+      text-decoration: none;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 12px;
+    }
+
+    .free-badge {
+      font-size: 8px;
+      font-weight: 600;
+      color: #C4B5FD;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="ad">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!-- Logo -->
+    <div class="logo-section">
+      <div class="logo-icon">
+        <svg viewBox="0 0 32 32" fill="none">
+          <circle cx="16" cy="16" r="11" stroke="white" stroke-width="2.5" stroke-dasharray="6 3"/>
+          <path d="M16 9v7l4 4" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="logo-name">BurnLoop</span>
+    </div>
+
+    <!-- Tagline -->
+    <div class="tagline">AI Fitness Coach</div>
+
+    <!-- Headline -->
+    <div class="headline">Train with<br>your health<br>in <span>mind</span></div>
+
+    <div class="divider"></div>
+
+    <!-- Features -->
+    <div class="features">
+      <div class="feature">
+        <div class="feature-dot">
+          <svg viewBox="0 0 9 9" fill="none">
+            <path d="M2 4.5l2 2 3-3.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <div class="feature-text">AI Nutrition Plans</div>
+          <div class="feature-sub">Condition-aware meals</div>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-dot">
+          <svg viewBox="0 0 9 9" fill="none">
+            <path d="M2 4.5l2 2 3-3.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <div class="feature-text">Energy Tracking</div>
+          <div class="feature-sub">Real-time burn metrics</div>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-dot">
+          <svg viewBox="0 0 9 9" fill="none">
+            <path d="M2 4.5l2 2 3-3.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <div class="feature-text">Personalized Coach</div>
+          <div class="feature-sub">Adapts to your goals</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stat block -->
+    <div class="stat-block">
+      <div class="stat-num">2<span class="stat-unit">×</span></div>
+      <div class="stat-label">Faster Results</div>
+    </div>
+
+    <!-- CTA -->
+    <a class="cta" href="#">Start Free Today</a>
+    <div class="free-badge">No credit card required</div>
+  </div>
+</body>
+</html>

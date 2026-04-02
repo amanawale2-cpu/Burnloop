@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=320">
+  <title>BurnLoop — 320x50 Mobile Banner</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 320px;
+      height: 50px;
+      overflow: hidden;
+      font-family: Helvetica, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #3B1D8A;
+    }
+
+    .ad {
+      width: 320px;
+      height: 50px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      gap: 0;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(30px);
+      opacity: 0.35;
+    }
+    .blob-1 {
+      width: 80px; height: 80px;
+      background: #F97316;
+      top: -30px; left: 80px;
+    }
+    .blob-2 {
+      width: 70px; height: 70px;
+      background: #C026D3;
+      bottom: -30px; right: 100px;
+    }
+
+    /* Logo */
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      position: relative;
+      z-index: 2;
+      flex-shrink: 0;
+      margin-right: 14px;
+    }
+
+    .logo-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #F97316 0%, #C026D3 50%, #6D28D9 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-icon svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .logo-name {
+      font-size: 15px;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: -0.3px;
+    }
+
+    /* Divider */
+    .divider {
+      width: 1px;
+      height: 28px;
+      background: rgba(255,255,255,0.15);
+      flex-shrink: 0;
+      margin-right: 14px;
+    }
+
+    /* Headline */
+    .headline-section {
+      position: relative;
+      z-index: 2;
+      flex: 1;
+    }
+
+    .headline {
+      font-size: 13px;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: -0.2px;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .headline span {
+      background: linear-gradient(135deg, #F97316, #C026D3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .sub {
+      font-size: 9px;
+      font-weight: 500;
+      color: #C4B5FD;
+      letter-spacing: 0.3px;
+      margin-top: 1px;
+    }
+
+    /* CTA */
+    .cta-section {
+      position: relative;
+      z-index: 2;
+      flex-shrink: 0;
+      margin-left: 10px;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      background: linear-gradient(135deg, #F97316 0%, #C026D3 60%, #6D28D9 100%);
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 7px 14px;
+      border-radius: 9999px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="ad">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <!-- Logo -->
+    <div class="logo-section">
+      <div class="logo-icon">
+        <svg viewBox="0 0 16 16" fill="none">
+          <circle cx="8" cy="8" r="5.5" stroke="white" stroke-width="2" stroke-dasharray="3.5 1.5"/>
+          <path d="M8 5v3l2 2" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="logo-name">BurnLoop</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Headline -->
+    <div class="headline-section">
+      <div class="headline">Burn <span>Smarter</span> with AI</div>
+      <div class="sub">Health-aware fitness coaching</div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section">
+      <a class="cta" href="#">Get Started</a>
+    </div>
+  </div>
+</body>
+</html>
