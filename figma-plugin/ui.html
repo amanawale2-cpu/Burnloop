@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Inter, -apple-system, sans-serif;
+      background: #FAFAF9;
+      padding: 20px;
+      width: 280px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .flame {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, #F97316, #C026D3, #6D28D9);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+    }
+    h1 { font-size: 15px; font-weight: 700; color: #111827; }
+    p  { font-size: 12px; color: #6B7280; margin-top: 2px; }
+    .divider { height: 1px; background: #E5E7EB; margin: 16px 0; }
+    .checklist { list-style: none; margin-bottom: 20px; }
+    .checklist li {
+      font-size: 12px; color: #6B7280;
+      padding: 4px 0;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #E5E7EB; flex-shrink: 0;
+    }
+    .dot.done { background: #10B981; }
+    .dot.active {
+      background: #7C3AED;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.4; }
+    }
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, #F97316, #C026D3, #6D28D9);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity .15s;
+    }
+    button:hover   { opacity: .9; }
+    button:active  { opacity: .8; }
+    button:disabled { opacity: .45; cursor: not-allowed; }
+    .status {
+      margin-top: 14px;
+      font-size: 12px;
+      color: #6B7280;
+      text-align: center;
+      min-height: 18px;
+    }
+    .status.error { color: #EF4444; }
+    .status.done  { color: #10B981; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="logo">
+    <div class="flame">🔥</div>
+    <div>
+      <h1>BurnLoop Design System</h1>
+      <p>Figma builder v1.1</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <ul class="checklist" id="checklist">
+    <li><span class="dot" id="d0"></span> Color styles (35 tokens)</li>
+    <li><span class="dot" id="d1"></span> Typography styles (20 scales)</li>
+    <li><span class="dot" id="d2"></span> Effect styles (shadows + blur)</li>
+    <li><span class="dot" id="d3"></span> 🎨 Foundations page</li>
+    <li><span class="dot" id="d4"></span> 🧱 Components page</li>
+  </ul>
+
+  <button id="btn" onclick="run()">Build Design System</button>
+  <div class="status" id="status"></div>
+
+  <script>
+    function run() {
+      document.getElementById('btn').disabled = true;
+      document.getElementById('status').textContent = 'Building…';
+      document.getElementById('status').className = 'status';
+      parent.postMessage({ pluginMessage: { type: 'build' } }, '*');
+    }
+
+    window.onmessage = (e) => {
+      const msg = e.data.pluginMessage;
+      if (!msg) return;
+
+      if (msg.type === 'progress') {
+        const dot = document.getElementById('d' + msg.step);
+        // mark previous steps done
+        for (let i = 0; i < msg.step; i++) {
+          const d = document.getElementById('d' + i);
+          d.className = 'dot done';
+        }
+        if (dot) dot.className = 'dot active';
+        document.getElementById('status').textContent = msg.label;
+      }
+
+      if (msg.type === 'done') {
+        for (let i = 0; i < 5; i++) {
+          const d = document.getElementById('d' + i);
+          if (d) d.className = 'dot done';
+        }
+        document.getElementById('status').textContent = '✅ Done! Check your Figma pages.';
+        document.getElementById('status').className = 'status done';
+        document.getElementById('btn').disabled = false;
+        document.getElementById('btn').textContent = 'Rebuild';
+      }
+
+      if (msg.type === 'error') {
+        document.getElementById('status').textContent = '❌ ' + msg.message;
+        document.getElementById('status').className = 'status error';
+        document.getElementById('btn').disabled = false;
+      }
+    };
+  </script>
+</body>
+</html>
