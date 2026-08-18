@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BurnLoop — Feature Ad: Health-Aware</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      font-family: Helvetica, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0D0520;
+    }
+
+    .ad {
+      width: 1080px;
+      height: 1350px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 60px 64px 56px;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(130px);
+      opacity: 0.3;
+    }
+    .blob-1 { width: 500px; height: 500px; background: #7C3AED; top: -100px; left: -100px; }
+    .blob-2 { width: 400px; height: 400px; background: #C026D3; bottom: 200px; right: -80px; }
+    .blob-3 { width: 350px; height: 350px; background: #F97316; top: 600px; left: 50px; opacity: 0.2; }
+
+    .logo-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 52px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo-icon {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #F97316 0%, #C026D3 50%, #6D28D9 100%);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .logo-icon svg { width: 34px; height: 34px; }
+
+    .logo-name {
+      font-size: 32px; font-weight: 900; color: #FFFFFF; letter-spacing: -0.8px;
+    }
+
+    .copy-section {
+      position: relative;
+      z-index: 2;
+      margin-bottom: 52px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(249,115,22,0.15);
+      border: 1px solid rgba(249,115,22,0.35);
+      border-radius: 9999px;
+      padding: 7px 16px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #F97316;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 24px;
+    }
+
+    .headline {
+      font-size: 72px;
+      font-weight: 900;
+      color: #FFFFFF;
+      line-height: 1.05;
+      letter-spacing: -2.5px;
+      margin-bottom: 20px;
+    }
+
+    .headline .accent {
+      background: linear-gradient(135deg, #F97316 0%, #C026D3 60%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subheadline {
+      font-size: 22px;
+      font-weight: 400;
+      color: rgba(196, 181, 253, 0.85);
+      line-height: 1.5;
+      max-width: 820px;
+    }
+
+    .subheadline strong { color: #FFFFFF; font-weight: 700; }
+
+    .mockup-section {
+      position: relative;
+      z-index: 2;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 48px;
+    }
+
+    .phone {
+      width: 340px;
+      height: 680px;
+      background: #1A0D35;
+      border-radius: 44px;
+      border: 2px solid rgba(255,255,255,0.1);
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 40px 120px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.05);
+    }
+
+    .phone-status {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px 8px;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .health-check-screen {
+      padding: 0 20px;
+    }
+
+    .screen-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #C4B5FD;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .health-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 10px;
+    }
+
+    .condition-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .condition-row:last-child { margin-bottom: 0; }
+
+    .condition-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .condition-icon {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+
+    .condition-name {
+      font-size: 14px; font-weight: 600; color: #FFFFFF;
+    }
+    .condition-note {
+      font-size: 10px; font-weight: 500; color: #C4B5FD; margin-top: 1px;
+    }
+
+    .condition-badge {
+      font-size: 10px; font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 9999px;
+    }
+    .badge-noted { background: rgba(16,185,129,0.2); color: #10B981; border: 1px solid rgba(16,185,129,0.3); }
+    .badge-avoid { background: rgba(239,68,68,0.2); color: #EF4444; border: 1px solid rgba(239,68,68,0.3); }
+
+    .ai-insight {
+      background: linear-gradient(135deg, rgba(124,58,237,0.25), rgba(192,38,211,0.2));
+      border: 1px solid rgba(124,58,237,0.4);
+      border-radius: 16px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .ai-dot {
+      width: 28px; height: 28px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #7C3AED, #C026D3);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .ai-dot svg { width: 15px; height: 15px; }
+
+    .ai-text {
+      font-size: 12px; font-weight: 600; color: #FFFFFF; line-height: 1.4;
+    }
+    .ai-sub { font-size: 10px; color: #C4B5FD; margin-top: 3px; }
+
+    .plan-card {
+      background: rgba(249,115,22,0.1);
+      border: 1px solid rgba(249,115,22,0.25);
+      border-radius: 16px;
+      padding: 14px 16px;
+    }
+
+    .plan-title {
+      font-size: 11px; font-weight: 700; color: #F97316;
+      text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px;
+    }
+
+    .plan-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .plan-row:last-child { margin-bottom: 0; }
+
+    .plan-item { font-size: 12px; font-weight: 600; color: #FFFFFF; }
+    .plan-status { font-size: 11px; font-weight: 600; color: #10B981; }
+    .plan-avoid { font-size: 11px; font-weight: 600; color: #EF4444; }
+
+    .float-badge {
+      position: absolute;
+      right: -30px;
+      top: 120px;
+      background: rgba(16,185,129,0.15);
+      border: 1px solid rgba(16,185,129,0.4);
+      border-radius: 14px;
+      padding: 14px 18px;
+      text-align: center;
+      min-width: 140px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+
+    .float-num {
+      font-size: 28px; font-weight: 900; color: #10B981;
+      line-height: 1; letter-spacing: -0.5px;
+    }
+    .float-label {
+      font-size: 10px; font-weight: 700; color: rgba(16,185,129,0.8);
+      text-transform: uppercase; letter-spacing: 0.8px; margin-top: 4px;
+    }
+
+    .float-badge-2 {
+      position: absolute;
+      left: -20px;
+      bottom: 140px;
+      background: rgba(249,115,22,0.12);
+      border: 1px solid rgba(249,115,22,0.3);
+      border-radius: 14px;
+      padding: 12px 16px;
+      text-align: center;
+      min-width: 120px;
+    }
+
+    .float-num-2 {
+      font-size: 24px; font-weight: 900; color: #F97316;
+      line-height: 1; letter-spacing: -0.5px;
+    }
+    .float-label-2 {
+      font-size: 9px; font-weight: 700; color: rgba(249,115,22,0.8);
+      text-transform: uppercase; letter-spacing: 0.8px; margin-top: 3px;
+    }
+
+    .bottom-section {
+      position: relative;
+      z-index: 2;
+    }
+
+    .features-row {
+      display: flex;
+      gap: 28px;
+      margin-bottom: 28px;
+    }
+
+    .feat {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .feat-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #F97316, #C026D3);
+      flex-shrink: 0;
+    }
+
+    .feat-text {
+      font-size: 16px; font-weight: 600; color: rgba(255,255,255,0.75);
+    }
+
+    .cta-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #F97316 0%, #C026D3 50%, #6D28D9 100%);
+      color: #FFFFFF;
+      font-size: 20px;
+      font-weight: 700;
+      padding: 18px 44px;
+      border-radius: 9999px;
+      text-decoration: none;
+      letter-spacing: -0.3px;
+    }
+
+    .cta svg { width: 18px; height: 18px; }
+
+    .cta-note {
+      font-size: 15px; font-weight: 500; color: rgba(196,181,253,0.6);
+    }
+  </style>
+</head>
+<body>
+  <div class="ad">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <div class="logo-row">
+      <div class="logo-icon">
+        <svg viewBox="0 0 34 34" fill="none">
+          <circle cx="17" cy="17" r="12" stroke="white" stroke-width="2.5" stroke-dasharray="7 3.5"/>
+          <path d="M17 10v7l4.5 4.5" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="logo-name">BurnLoop</span>
+    </div>
+
+    <div class="copy-section">
+      <div class="eyebrow">Health-First</div>
+      <div class="headline">Your health<br>history shapes<br>your <span class="accent">meal plan.</span></div>
+      <div class="subheadline">
+        Unlike other nutrition apps, BurnLoop <strong>checks your health conditions first</strong>
+        before building your personalized diet and fitness plan.
+      </div>
+    </div>
+
+    <div class="mockup-section">
+      <div style="position: relative;">
+        <div class="phone">
+          <div class="phone-status">
+            <span>9:41</span>
+            <span style="color:#C4B5FD;font-size:11px;font-weight:600;">Health Check</span>
+          </div>
+
+          <div class="health-check-screen">
+            <div class="screen-title">Health Profile Check</div>
+
+            <div class="health-card">
+              <div class="condition-row">
+                <div class="condition-left">
+                  <div class="condition-icon" style="background:rgba(239,68,68,0.15);">&#10084;&#65039;</div>
+                  <div>
+                    <div class="condition-name">Hypertension</div>
+                    <div class="condition-note">Sodium limits applied</div>
+                  </div>
+                </div>
+                <div class="condition-badge badge-noted">Noted</div>
+              </div>
+              <div class="condition-row">
+                <div class="condition-left">
+                  <div class="condition-icon" style="background:rgba(245,158,11,0.15);">&#129754;</div>
+                  <div>
+                    <div class="condition-name">Pre-Diabetes</div>
+                    <div class="condition-note">Low GI foods prioritized</div>
+                  </div>
+                </div>
+                <div class="condition-badge badge-noted">Noted</div>
+              </div>
+              <div class="condition-row">
+                <div class="condition-left">
+                  <div class="condition-icon" style="background:rgba(16,185,129,0.15);">&#127806;</div>
+                  <div>
+                    <div class="condition-name">Gluten Sensitivity</div>
+                    <div class="condition-note">Gluten-free alternatives</div>
+                  </div>
+                </div>
+                <div class="condition-badge badge-avoid">Avoid</div>
+              </div>
+            </div>
+
+            <div class="ai-insight">
+              <div class="ai-dot">
+                <svg viewBox="0 0 15 15" fill="none">
+                  <circle cx="7.5" cy="7.5" r="5.5" stroke="white" stroke-width="1.5"/>
+                  <path d="M5.5 7.5h4M7.5 5.5v4" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <div class="ai-text">AI Plan Updated</div>
+                <div class="ai-sub">Rebuilding your meal plan based on 3 health conditions</div>
+              </div>
+            </div>
+
+            <div class="plan-card">
+              <div class="plan-title">Today's Adjusted Plan</div>
+              <div class="plan-row">
+                <span class="plan-item">Sodium</span>
+                <span class="plan-status">&le; 1,500 mg &#10003;</span>
+              </div>
+              <div class="plan-row">
+                <span class="plan-item">White Rice</span>
+                <span class="plan-avoid">Swapped &rarr; Quinoa</span>
+              </div>
+              <div class="plan-row">
+                <span class="plan-item">Whole Wheat</span>
+                <span class="plan-avoid">Swapped &rarr; GF Oats</span>
+              </div>
+              <div class="plan-row">
+                <span class="plan-item">Added Sugar</span>
+                <span class="plan-status">&le; 25 g &#10003;</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="float-badge">
+          <div class="float-num">3</div>
+          <div class="float-label">Conditions<br>Tracked</div>
+        </div>
+        <div class="float-badge-2">
+          <div class="float-num-2">AI</div>
+          <div class="float-label-2">Personalized</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-section">
+      <div class="features-row">
+        <div class="feat"><div class="feat-dot"></div><span class="feat-text">Condition-aware nutrition</span></div>
+        <div class="feat"><div class="feat-dot"></div><span class="feat-text">Auto plan adjustments</span></div>
+        <div class="feat"><div class="feat-dot"></div><span class="feat-text">Doctor-friendly tracking</span></div>
+      </div>
+      <div class="cta-row">
+        <a class="cta" href="#">
+          Start Free
+          <svg viewBox="0 0 18 18" fill="none">
+            <path d="M3 9h12M10 4l5 5-5 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <span class="cta-note">No credit card required</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
