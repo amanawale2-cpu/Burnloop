@@ -1,0 +1,103 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  /* Brand palette — from docs/brand/figma-brand-guidelines.md */
+  --color-brand-light: #f1eef9;
+  --color-brand-light-hover: #eae6f6;
+  --color-brand-light-active: #d3cced;
+  --color-brand-normal: #7259c5;
+  --color-brand-normal-hover: #6750b1;
+  --color-brand-normal-active: #5b479e;
+  --color-brand-dark: #564394;
+  --color-brand-dark-hover: #443576;
+  --color-brand-dark-active: #332859;
+  --color-brand-darker: #281f45;
+
+  /* Exact logo gradient stops */
+  --color-flame-1: #9278e7;
+  --color-flame-2: #7259c5;
+  --color-flame-3: #624ea1;
+  --color-flame-4: #3e3164;
+  --color-flame-5: #281f45;
+
+  /* Surfaces */
+  --background: #0f0a1a;
+  --foreground: #f7f5fb;
+  --muted-foreground: #b6acce;
+  --border-subtle: rgba(247, 245, 251, 0.1);
+
+  --radius: 0.9rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border-subtle);
+
+  --color-brand-light: var(--color-brand-light);
+  --color-brand-light-hover: var(--color-brand-light-hover);
+  --color-brand-light-active: var(--color-brand-light-active);
+  --color-brand-normal: var(--color-brand-normal);
+  --color-brand-normal-hover: var(--color-brand-normal-hover);
+  --color-brand-normal-active: var(--color-brand-normal-active);
+  --color-brand-dark: var(--color-brand-dark);
+  --color-brand-dark-hover: var(--color-brand-dark-hover);
+  --color-brand-dark-active: var(--color-brand-dark-active);
+  --color-brand-darker: var(--color-brand-darker);
+
+  --color-flame-1: var(--color-flame-1);
+  --color-flame-2: var(--color-flame-2);
+  --color-flame-3: var(--color-flame-3);
+  --color-flame-4: var(--color-flame-4);
+  --color-flame-5: var(--color-flame-5);
+
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, SFMono-Regular, monospace;
+
+  --radius-sm: calc(var(--radius) - 0.4rem);
+  --radius-md: calc(var(--radius) - 0.2rem);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 0.5rem);
+
+  --animate-pulse-soft: pulse-soft 2.6s ease-in-out infinite;
+  --animate-drift: drift 14s ease-in-out infinite;
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(1.5%, -2%, 0) scale(1.04);
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
