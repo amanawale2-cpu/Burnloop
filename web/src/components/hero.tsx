@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { AppleIcon, FlameIcon, PlayIcon } from "lucide-react";
+import { FlameIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
@@ -42,32 +42,16 @@ export function Hero() {
           </h1>
 
           <p className="mt-6 max-w-lg font-body text-lg leading-relaxed text-muted-foreground">
-            Know what to eat — and what to avoid — with personalized guidance
+            Know what to eat and what to avoid with personalized guidance
             based on your health condition.
           </p>
 
           <div className="mt-9 flex flex-col gap-4">
-            <div className="flex flex-wrap items-center gap-4">
-              <Button size="default" asChild>
-                <a href="#signup">Try for free</a>
-              </Button>
-              <div className="flex items-center gap-2.5">
-                <Button variant="outline" size="sm" asChild>
-                  <a href="#download" aria-label="Download on the App Store">
-                    <AppleIcon className="size-4" />
-                    App Store
-                  </a>
-                </Button>
-                <Button variant="outline" size="sm" asChild>
-                  <a href="#download" aria-label="Get it on Google Play">
-                    <PlayIcon className="size-4" />
-                    Google Play
-                  </a>
-                </Button>
-              </div>
-            </div>
+            <Button size="default" className="w-fit" asChild>
+              <a href="#signup">Sign up for free</a>
+            </Button>
             <p className="font-mono text-xs tracking-wide text-muted-foreground/80 uppercase">
-              Free to start · No credit card · 30&nbsp;seconds to set up
+              Free to start, no credit card, 30&nbsp;seconds to set up
             </p>
           </div>
         </div>

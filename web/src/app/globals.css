@@ -54,8 +54,8 @@
   --color-flame-4: var(--color-flame-4);
   --color-flame-5: var(--color-flame-5);
 
-  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
-  --font-body: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, sans-serif;
+  --font-body: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, sans-serif;
   --font-mono: var(--font-plex-mono), ui-monospace, SFMono-Regular, monospace;
 
   --radius-sm: calc(var(--radius) - 0.4rem);

@@ -1,17 +1,6 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import { IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
-
-const bricolage = Bricolage_Grotesque({
-  variable: "--font-bricolage",
-  subsets: ["latin"],
-});
-
-const plexSans = IBM_Plex_Sans({
-  variable: "--font-plex-sans",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-});
 
 const plexMono = IBM_Plex_Mono({
   variable: "--font-plex-mono",
@@ -41,10 +30,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${bricolage.variable} ${plexSans.variable} ${plexMono.variable} antialiased`}
-    >
+    <html lang="en" className={`${plexMono.variable} antialiased`}>
       <body className="bg-background font-body text-foreground">{children}</body>
     </html>
   );
