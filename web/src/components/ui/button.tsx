@@ -5,15 +5,15 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-medium font-body transition-colors disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-brand-normal focus-visible:ring-offset-2 focus-visible:ring-offset-background [&_svg]:pointer-events-none [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-medium font-body transition-[background-color,background-position,border-color,box-shadow,filter] duration-300 disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-brand-normal focus-visible:ring-offset-2 focus-visible:ring-offset-background [&_svg]:pointer-events-none [&_svg]:shrink-0",
   {
     variants: {
       variant: {
         default:
-          "bg-brand-normal text-white shadow-[0_8px_24px_-8px_rgba(114,89,197,0.65)] hover:bg-brand-normal-hover active:bg-brand-normal-active",
+          "bg-gradient-to-r from-flame-1 via-brand-normal to-brand-dark bg-[length:135%_100%] bg-[position:0%_0%] text-white shadow-[0_10px_28px_-10px_rgba(114,89,197,0.55)] hover:bg-[position:100%_0%] active:brightness-95",
         outline:
-          "border border-white/25 bg-transparent text-foreground hover:bg-white/10",
-        ghost: "bg-transparent text-foreground hover:bg-white/10",
+          "border border-brand-normal/30 bg-transparent text-foreground hover:border-brand-normal/50 hover:bg-brand-light",
+        ghost: "bg-transparent text-foreground hover:bg-brand-light",
       },
       size: {
         default: "h-11 px-6 has-[>svg]:px-5",

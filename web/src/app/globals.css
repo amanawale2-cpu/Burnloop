@@ -21,11 +21,12 @@
   --color-flame-4: #3e3164;
   --color-flame-5: #281f45;
 
-  /* Surfaces */
-  --background: #0f0a1a;
-  --foreground: #f7f5fb;
-  --muted-foreground: #b6acce;
-  --border-subtle: rgba(247, 245, 251, 0.1);
+  /* Surfaces — white primary per brand guidelines, purple reserved for
+     text accents, buttons, and product-UI chrome */
+  --background: #ffffff;
+  --foreground: #24193f;
+  --muted-foreground: #6d6485;
+  --border-subtle: rgba(114, 89, 197, 0.14);
 
   --radius: 0.9rem;
 }

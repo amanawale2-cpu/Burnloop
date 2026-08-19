@@ -22,15 +22,15 @@ const plexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://burnloopai.com"),
   title: {
-    default: "BurnLoop — The AI health coach that knows your condition",
+    default: "BurnLoop — Personalized Meal Guidance for Your Health Condition",
     template: "%s · BurnLoop",
   },
   description:
-    "BurnLoop scans your meals with AI and flags what's unsafe for your specific health condition — diabetes, kidney disease, heart health, and more — before you eat.",
+    "Know what to eat and what to avoid with personalized meal guidance based on your health condition — diabetes, cholesterol, heart health, and more. Free to start.",
   openGraph: {
-    title: "BurnLoop — The AI health coach that knows your condition",
+    title: "BurnLoop — Personalized Meal Guidance for Your Health Condition",
     description:
-      "Snap a photo of any meal and get an instant, condition-aware health alert. Free to start.",
+      "Know what to eat and what to avoid with personalized guidance based on your health condition. Free to start.",
     siteName: "BurnLoop",
     type: "website",
   },

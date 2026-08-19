@@ -21,11 +21,11 @@ const NAV_LINKS = [
 
 export function SiteHeader() {
   return (
-    <header className="fixed inset-x-0 top-0 z-40">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-brand-normal/10 bg-white/80 backdrop-blur-md">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
         <Link href="/" className="flex items-center gap-2.5" aria-label="BurnLoop home">
           <Image src="/logo/icon.svg" alt="" width={28} height={37} priority className="h-8 w-auto" />
-          <span className="font-display text-xl font-semibold tracking-tight text-white">
+          <span className="font-display text-xl font-semibold tracking-tight text-foreground">
             BurnLoop
           </span>
         </Link>
@@ -35,16 +35,19 @@ export function SiteHeader() {
             <a
               key={link.href}
               href={link.href}
-              className="font-body text-sm text-white/75 transition-colors hover:text-white"
+              className="font-body text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               {link.label}
             </a>
           ))}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden items-center gap-2 md:flex">
+          <Button variant="ghost" size="sm" asChild>
+            <a href="#login">Log in</a>
+          </Button>
           <Button size="sm" asChild>
-            <a href="#download">Get BurnLoop Free</a>
+            <a href="#signup">Sign up</a>
           </Button>
         </div>
 
@@ -52,7 +55,7 @@ export function SiteHeader() {
           <SheetTrigger asChild>
             <button
               type="button"
-              className="inline-flex size-10 items-center justify-center rounded-full text-white/85 transition-colors hover:bg-white/10 md:hidden"
+              className="inline-flex size-10 items-center justify-center rounded-full text-foreground/80 transition-colors hover:bg-brand-light md:hidden"
               aria-label="Open menu"
             >
               <MenuIcon className="size-5" />
@@ -72,11 +75,18 @@ export function SiteHeader() {
                 </SheetClose>
               ))}
             </nav>
-            <SheetClose asChild>
-              <Button asChild className="mt-2">
-                <a href="#download">Get BurnLoop Free</a>
-              </Button>
-            </SheetClose>
+            <div className="mt-2 flex flex-col gap-2">
+              <SheetClose asChild>
+                <Button asChild>
+                  <a href="#signup">Sign up</a>
+                </Button>
+              </SheetClose>
+              <SheetClose asChild>
+                <Button variant="outline" className="border-white/25 text-white hover:bg-white/10" asChild>
+                  <a href="#login">Log in</a>
+                </Button>
+              </SheetClose>
+            </div>
           </SheetContent>
         </Sheet>
       </div>
