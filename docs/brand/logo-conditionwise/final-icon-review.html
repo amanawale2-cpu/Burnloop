@@ -14,26 +14,15 @@
 </style></head>
 <body>
   <div class="row">
-    <div class="label">Shield + Check + Leaf accent</div>
+    <div class="label">Shield + Bowl + Check badge</div>
     <div class="tile purple" id="a"></div>
     <div class="tile white" id="b"></div>
     <div class="tile purple small" id="c"></div>
     <div class="tile white small" id="d"></div>
   </div>
-  <div class="row">
-    <div class="label">Shield + Check only (no accent)</div>
-    <div class="tile purple" id="e"></div>
-    <div class="tile white" id="f"></div>
-    <div class="tile purple small" id="g"></div>
-    <div class="tile white small" id="h"></div>
-  </div>
 <script>
-  Promise.all([
-    fetch('final-icon.svg').then(r=>r.text()),
-    fetch('final-icon-alt-no-accent.svg').then(r=>r.text())
-  ]).then(([svg1, svg2])=>{
-    ['a','b','c','d'].forEach(id => document.getElementById(id).innerHTML = svg1);
-    ['e','f','g','h'].forEach(id => document.getElementById(id).innerHTML = svg2);
+  fetch('final-icon.svg').then(r=>r.text()).then(svg=>{
+    ['a','b','c','d'].forEach(id => document.getElementById(id).innerHTML = svg);
   });
 </script>
 </body></html>
