@@ -1,0 +1,47 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="d19-bowl" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e2dbf7"/>
+    </linearGradient>
+    <linearGradient id="d19-leaf" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c3b1ee"/>
+      <stop offset="100%" stop-color="#8f74d1"/>
+    </linearGradient>
+    <linearGradient id="d19-shield" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9d84dd"/>
+      <stop offset="100%" stop-color="#4c3a85"/>
+    </linearGradient>
+    <mask id="d19-check-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+      <rect width="100" height="100" fill="white"/>
+      <path d="M 67 68 L 73 74 L 87 57" fill="none" stroke="black"
+            stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </mask>
+    <filter id="d19-lift" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="2.2" stdDeviation="2.2" flood-color="#2c1f52" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#d19-lift)">
+    <path fill="url(#d19-leaf)"
+          d="M 40 44 C 34 42 30 35 33 28 C 40 27 47 32 46 40 C 45 43 42 45 40 44 Z"/>
+    <path fill="url(#d19-leaf)" opacity="0.92"
+          d="M 48 42 C 41 38 38 29 43 21 C 51 22 57 30 54 39 C 53 42 50 43 48 42 Z"/>
+    <g>
+      <ellipse cx="38" cy="45" rx="20" ry="5" fill="url(#d19-bowl)"/>
+      <path fill="url(#d19-bowl)"
+            d="M 18 47 C 18 63 27 72 38 72 C 49 72 58 63 58 47 Z"/>
+      <path fill="#ffffff" opacity="0.5"
+            d="M 22 47 C 23 44 30 42 38 42 C 46 42 52 44 53 47 C 46 46.3 30.5 46.3 22 47 Z"/>
+    </g>
+  </g>
+
+  <g filter="url(#d19-lift)">
+    <path fill="url(#d19-shield)" mask="url(#d19-check-mask)"
+          d="M 76 34 L 58 43 C 56 44 55 45.8 55 47.8 L 55 63
+             C 55 79 64 91 76 97 C 88 91 97 79 97 63 L 97 47.8
+             C 97 45.8 96 44 94 43 Z"/>
+    <path fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.4"
+          d="M 60 43.6 C 65 40.5 71 37.3 76 35"/>
+  </g>
+</svg>
