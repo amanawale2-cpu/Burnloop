@@ -1,0 +1,13 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <mask id="shield-check-mask-alt" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+      <rect width="100" height="100" fill="white"/>
+      <path d="M 34 51 L 44 61 L 68 34" fill="none" stroke="black"
+            stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </mask>
+  </defs>
+  <path fill="currentColor" mask="url(#shield-check-mask-alt)"
+        d="M 50 6 L 22 18 C 19.5 19.1 18 21.5 18 24.2 L 18 43
+           C 18 65 30 82 50 92 C 70 82 82 65 82 43 L 82 24.2
+           C 82 21.5 80.5 19.1 78 18 Z"/>
+</svg>
