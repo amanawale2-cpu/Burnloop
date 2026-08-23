@@ -1,0 +1,10 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="ov-clip">
+      <circle cx="58" cy="46" r="20"/>
+    </clipPath>
+  </defs>
+  <circle cx="40" cy="54" r="24" fill="none" stroke="currentColor" stroke-width="3"/>
+  <circle cx="58" cy="46" r="20" fill="none" stroke="currentColor" stroke-width="3"/>
+  <circle cx="40" cy="54" r="24" clip-path="url(#ov-clip)" fill="currentColor" opacity="0.35"/>
+</svg>
