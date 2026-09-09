@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ConditionWise — Logo Exploration</title>
+<style>
+  :root{
+    --purple-light:#f1eef9;
+    --purple-normal:#7259c5;
+    --purple-dark:#564394;
+    --purple-darker:#281f45;
+    --ink:#24193f;
+    --muted:#6d6485;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; padding:64px 24px 96px; background:#ffffff; color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+  h1{font-size:32px; font-weight:600; text-align:center; margin:0 0 6px}
+  .sub{text-align:center; color:var(--muted); font-size:14px; margin-bottom:56px}
+  .grid{
+    max-width:1120px; margin:0 auto; display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:32px;
+  }
+  .card{
+    border:1px solid rgba(114,89,197,0.15); border-radius:20px; padding:28px;
+    display:flex; flex-direction:column; align-items:center; gap:16px;
+  }
+  .row{display:flex; gap:20px; align-items:center; justify-content:center}
+  .icon-tile{
+    width:88px; height:88px; border-radius:20px;
+    background:linear-gradient(155deg, var(--purple-normal), var(--purple-dark));
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 24px -8px rgba(114,89,197,0.5);
+  }
+  .icon-tile svg{width:52px; height:52px; color:#fff}
+  .mono-tile{
+    width:88px; height:88px; border-radius:20px; background:var(--purple-light);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .mono-tile svg{width:52px; height:52px; color:var(--purple-normal)}
+  .label{text-align:center}
+  .label h2{font-size:15px; font-weight:600; margin:0 0 2px; letter-spacing:0.01em}
+  .label p{font-size:13px; color:var(--muted); line-height:1.5; margin:0; max-width:280px}
+  .num{font-family:"SF Mono",Menlo,monospace; font-size:11px; color:var(--purple-normal); letter-spacing:0.08em}
+
+  /* Home screen simulator */
+  .phone-section{max-width:420px; margin:96px auto 0; text-align:center}
+  .phone-section h3{font-size:18px; margin-bottom:6px}
+  .phone-section .sub2{font-size:13px; color:var(--muted); margin-bottom:24px}
+  .phone{
+    width:340px; margin:0 auto; border-radius:44px; padding:20px 16px 28px;
+    background:linear-gradient(160deg,#e9e4f6,#f7f5fb);
+    box-shadow:0 30px 70px -20px rgba(40,31,69,0.35);
+  }
+  .homescreen-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:18px 10px;
+  }
+  .app{display:flex; flex-direction:column; align-items:center; gap:5px}
+  .app .tile{
+    width:56px; height:56px; border-radius:14px; display:flex; align-items:center; justify-content:center;
+  }
+  .app .tile.cw{background:linear-gradient(155deg, var(--purple-normal), var(--purple-dark));}
+  .app .tile.cw svg{width:32px; height:32px; color:#fff}
+  .app .tile.other{background:#d9d9de; color:#8a8a90; font-size:20px; display:flex; align-items:center; justify-content:center}
+  .app span{font-size:9px; color:var(--ink); opacity:0.75}
+</style>
+</head>
+<body>
+
+<h1>ConditionWise</h1>
+<p class="sub">Six icon directions — no flame, no fitness cliches, per the brand brief</p>
+
+<div class="grid">
+
+  <div class="card">
+    <div class="row">
+      <div class="icon-tile" id="i1"></div>
+      <div class="mono-tile" id="i1b"></div>
+    </div>
+    <div class="label">
+      <div class="num">01 — PURE GEOMETRIC</div>
+      <h2>Guided Shield</h2>
+      <p>A single shield silhouette with one rounded aperture cut into it, off-center. Protection with a point of focus — not a medical cross, not armor. Reads clearly at 16px.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div class="icon-tile" id="i2"></div>
+      <div class="mono-tile" id="i2b"></div>
+    </div>
+    <div class="label">
+      <div class="num">02 — DOT MATRIX</div>
+      <h2>Personal Constellation</h2>
+      <p>Small points (your inputs — preference, history, condition, body stats) converging on one larger center point: you, understood. Asymmetric, not a generic grid.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div class="icon-tile" id="i3"></div>
+      <div class="mono-tile" id="i3b"></div>
+    </div>
+    <div class="label">
+      <div class="num">03 — LINE SYSTEM</div>
+      <h2>Settling Line</h2>
+      <p>One continuous curve — a little uneven, then calm — resolving into a solid point. Deliberately not an ECG spike pattern; it's the feeling of finding steady ground, not a hospital monitor.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div class="icon-tile" id="i4"></div>
+      <div class="mono-tile" id="i4b"></div>
+    </div>
+    <div class="label">
+      <div class="num">04 — DOTS + GEOMETRY</div>
+      <h2>Compass Check</h2>
+      <p>A ring (your whole health picture), a true-north tick, and an off-center point being gently guided toward balance. Guidance without a literal compass icon.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div class="icon-tile" id="i5"></div>
+      <div class="mono-tile" id="i5b"></div>
+    </div>
+    <div class="label">
+      <div class="num">05 — LINES + GEOMETRY ⭐</div>
+      <h2>Open Shield</h2>
+      <p>An open ring with a gap at the top, and a single point resting exactly in that gap. "Your doctor can't watch every meal, we can" — visualized without saying it. My top pick: simplest, most ownable, most on-strategy.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div class="icon-tile" id="i6"></div>
+      <div class="mono-tile" id="i6b"></div>
+    </div>
+    <div class="label">
+      <div class="num">06 — NODE NETWORK</div>
+      <h2>Care Network</h2>
+      <p>A central "you" node linked to three inputs at different weights and distances. The most literal "personalized guidance" story, at the cost of being the most complex mark of the six.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="phone-section">
+  <h3>The one-line brand test</h3>
+  <p class="sub2">Concept 05 (Open Shield) on a real Home Screen, next to typical apps</p>
+  <div class="phone">
+    <div class="homescreen-grid" id="homescreen"></div>
+  </div>
+</div>
+
+<script>
+  const svgs = {
+    1: `<path fill-rule="evenodd" fill="currentColor" d="M50,14 C64,14 76,20 76,20 L76,50 C76,71 64,84 50,91 C36,84 24,71 24,50 L24,20 C24,20 36,14 50,14 Z M54,38 A8,8 0 1,0 70,38 A8,8 0 1,0 54,38 Z"/>`,
+    2: `<g fill="currentColor"><circle cx="50" cy="50" r="9"/><circle cx="30" cy="66" r="4"/><circle cx="24" cy="48" r="3"/><circle cx="34" cy="32" r="3.5"/><circle cx="66" cy="34" r="2.5" opacity="0.55"/><circle cx="74" cy="54" r="2" opacity="0.4"/></g>`,
+    3: `<path d="M16,58 Q28,38 38,54 T58,50 Q68,48 84,50" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/><circle cx="84" cy="50" r="4" fill="currentColor"/>`,
+    4: `<circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" stroke-width="3"/><line x1="50" y1="14" x2="50" y2="22" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/><circle cx="62" cy="62" r="6" fill="currentColor"/>`,
+    5: `<path d="M 74 28 A 32 32 0 1 1 26 28" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="50" cy="50" r="7" fill="currentColor"/>`,
+    6: `<g stroke="currentColor" stroke-width="2" fill="none" opacity="0.5"><path d="M50,50 Q38,40 28,32"/><path d="M50,50 Q64,38 72,26"/><path d="M50,50 Q56,66 62,78"/></g><g fill="currentColor"><circle cx="50" cy="50" r="8"/><circle cx="28" cy="32" r="3.5"/><circle cx="72" cy="26" r="3"/><circle cx="62" cy="78" r="3.5" opacity="0.6"/></g>`
+  };
+  function svg(inner){ return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">${inner}</svg>`; }
+  for (const [n, inner] of Object.entries(svgs)) {
+    document.getElementById('i'+n).innerHTML = svg(inner);
+    document.getElementById('i'+n+'b').innerHTML = svg(inner);
+  }
+
+  const homescreen = document.getElementById('homescreen');
+  const otherApps = ['✉️','📷','🎵','🗺️','📈','⏱️','🎧','⚙️','📅','☁️','💬','🧮','📝','🛒'];
+  let html = '';
+  const cwPos = 5; // where ConditionWise sits in the grid
+  for (let i = 0; i < 16; i++) {
+    if (i === cwPos) {
+      html += `<div class="app"><div class="tile cw">${svg(svgs[5])}</div><span>ConditionWise</span></div>`;
+    } else {
+      const label = ['Mail','Camera','Music','Maps','Health','Clock','Podcasts','Settings','Calendar','Files','Messages','Calc','Notes','Store','Wallet','Photos'][i] || 'App';
+      html += `<div class="app"><div class="tile other">${otherApps[i % otherApps.length]}</div><span>${label}</span></div>`;
+    }
+  }
+  homescreen.innerHTML = html;
+</script>
+
+</body>
+</html>

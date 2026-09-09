@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ConditionWise — Logo Exploration, Round 2</title>
+<style>
+  :root{
+    --purple-light:#f1eef9;
+    --purple-normal:#7259c5;
+    --purple-dark:#564394;
+    --ink:#24193f;
+    --muted:#6d6485;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; padding:64px 24px 96px; background:#ffffff; color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+  h1{font-size:32px; font-weight:600; text-align:center; margin:0 0 6px}
+  .sub{text-align:center; color:var(--muted); font-size:14px; margin-bottom:56px}
+  .grid{
+    max-width:1120px; margin:0 auto; display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:32px;
+  }
+  .card{
+    border:1px solid rgba(114,89,197,0.15); border-radius:20px; padding:28px;
+    display:flex; flex-direction:column; align-items:center; gap:16px;
+  }
+  .row{display:flex; gap:20px; align-items:center; justify-content:center}
+  .icon-tile{
+    width:88px; height:88px; border-radius:20px;
+    background:linear-gradient(155deg, var(--purple-normal), var(--purple-dark));
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 24px -8px rgba(114,89,197,0.5);
+  }
+  .icon-tile svg{width:52px; height:52px; color:#fff}
+  .mono-tile{
+    width:88px; height:88px; border-radius:20px; background:var(--purple-light);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .mono-tile svg{width:52px; height:52px; color:var(--purple-normal)}
+  .label{text-align:center}
+  .label h2{font-size:15px; font-weight:600; margin:0 0 2px; letter-spacing:0.01em}
+  .label p{font-size:13px; color:var(--muted); line-height:1.5; margin:0; max-width:280px}
+  .num{font-family:"SF Mono",Menlo,monospace; font-size:11px; color:var(--purple-normal); letter-spacing:0.08em}
+  .caveat{color:#a3541f; font-weight:600}
+</style>
+</head>
+<body>
+
+<h1>ConditionWise — Round 2</h1>
+<p class="sub">Six more icon directions, different pattern territory than round 1</p>
+
+<div class="grid">
+
+  <div class="card">
+    <div class="row">
+      <div class="icon-tile" id="i7"></div>
+      <div class="mono-tile" id="i7b"></div>
+    </div>
+    <div class="label">
+      <div class="num">07 — PURE GEOMETRIC</div>
+      <h2>Nested Arcs</h2>
+      <p>Two open arcs, offset and unequal weight, each with its own gap. Layers of attention around you rather than one closed loop. Quiet, a little more abstract than round 1.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div class="icon-tile" id="i8"></div>
+      <div class="mono-tile" id="i8b"></div>
+    </div>
+    <div class="label">
+      <div class="num">08 — ROUNDED-RECT GRID</div>
+      <h2>Selected Path</h2>
+      <p>A loose grid of soft tiles, most faded, one fully solid — your specific path picked out of many possible ones. Reads as "personalized," not generic nutrition-app grid icons.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div class="icon-tile" id="i9"></div>
+      <div class="mono-tile" id="i9b"></div>
+    </div>
+    <div class="label">
+      <div class="num">09 — LINE SYSTEM</div>
+      <h2>Found Path</h2>
+      <p>A route that dips, then rises cleanly to a solid point — the moment of finding the right answer. <span class="caveat">Honest flag:</span> the shape reads close to a checkmark, which is common "done/verified" iconography — worth deciding if that's a feature (instantly legible) or a cliché to avoid.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div class="icon-tile" id="i10"></div>
+      <div class="mono-tile" id="i10b"></div>
+    </div>
+    <div class="label">
+      <div class="num">10 — DOTS + GEOMETRY</div>
+      <h2>Data Badge</h2>
+      <p>A soft rounded-square badge (trust, credential) holding an asymmetric handful of points (your data: preference, history, condition, body stats). Warmer and more "product" than Compass Check.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div class="icon-tile" id="i11"></div>
+      <div class="mono-tile" id="i11b"></div>
+    </div>
+    <div class="label">
+      <div class="num">11 — BOOLEAN OVERLAP</div>
+      <h2>Overlap Focus</h2>
+      <p>Two unequal circles (you + guidance) with their overlap tinted. Represents personalization as intersection rather than a one-way alert. Risk: overlap/Venn marks are a common motif in "collaboration" logos generally, so it reads less distinctly ownable.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div class="icon-tile" id="i12"></div>
+      <div class="mono-tile" id="i12b"></div>
+    </div>
+    <div class="label">
+      <div class="num">12 — LAYERED RINGS</div>
+      <h2>Meeting Point</h2>
+      <p>Concentric rings (your whole health picture, layer by layer) with one accent point sitting off-center near the outer ring — meeting you where you actually are, not at the idealized center.</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const svgs = {
+    7: `<path d="M 30 26 A 34 34 0 1 1 26 62" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M 40 40 A 18 18 0 1 1 38 56" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" opacity="0.5"/>`,
+    8: `<g fill="currentColor"><rect x="24" y="24" width="16" height="16" rx="5" opacity="0.3"/><rect x="44" y="24" width="16" height="16" rx="5" opacity="0.3"/><rect x="24" y="44" width="16" height="16" rx="5" opacity="0.3"/><rect x="44" y="44" width="16" height="16" rx="5"/><rect x="64" y="44" width="16" height="16" rx="5" opacity="0.3"/><rect x="44" y="64" width="16" height="16" rx="5" opacity="0.3"/></g>`,
+    9: `<path d="M 20 42 Q 34 42 42 58 Q 56 30 82 26" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="82" cy="26" r="4.5" fill="currentColor"/>`,
+    10: `<rect x="22" y="22" width="56" height="56" rx="18" fill="none" stroke="currentColor" stroke-width="3.5"/><g fill="currentColor"><circle cx="42" cy="44" r="4.5"/><circle cx="60" cy="40" r="3"/><circle cx="56" cy="60" r="5"/><circle cx="38" cy="60" r="2.5" opacity="0.5"/></g>`,
+    11: `<defs><clipPath id="ov-clip"><circle cx="58" cy="46" r="20"/></clipPath></defs><circle cx="40" cy="54" r="24" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="58" cy="46" r="20" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="40" cy="54" r="24" clip-path="url(#ov-clip)" fill="currentColor" opacity="0.35"/>`,
+    12: `<g fill="none" stroke="currentColor"><circle cx="50" cy="50" r="34" stroke-width="2"/><circle cx="50" cy="50" r="23" stroke-width="2"/><circle cx="50" cy="50" r="12" stroke-width="2"/></g><circle cx="74" cy="34" r="6" fill="currentColor"/>`
+  };
+  function svg(inner){ return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">${inner}</svg>`; }
+  for (const [n, inner] of Object.entries(svgs)) {
+    document.getElementById('i'+n).innerHTML = svg(inner);
+    document.getElementById('i'+n+'b').innerHTML = svg(inner);
+  }
+</script>
+
+</body>
+</html>

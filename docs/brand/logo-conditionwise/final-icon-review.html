@@ -1,0 +1,28 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  body{margin:0; padding:40px; background:#fff; font-family:-apple-system,Helvetica,Arial,sans-serif; display:flex; flex-direction:column; gap:36px}
+  .row{display:flex; gap:30px; flex-wrap:wrap; align-items:center}
+  .label{font-size:13px; color:#6d6485; width:170px}
+  .tile{width:220px; height:220px; border-radius:48px; display:flex; align-items:center; justify-content:center}
+  .purple{background:linear-gradient(155deg,#7259c5,#564394); box-shadow:0 16px 32px -10px rgba(114,89,197,.5)}
+  .purple svg{width:132px; height:132px; color:#fff}
+  .white{background:#f1eef9; border:1px solid #e3dcf5}
+  .white svg{width:132px; height:132px; color:#7259c5}
+  .small{width:64px; height:64px; border-radius:16px}
+  .small svg{width:38px; height:38px}
+</style></head>
+<body>
+  <div class="row">
+    <div class="label">Shield + Bowl + Check badge</div>
+    <div class="tile purple" id="a"></div>
+    <div class="tile white" id="b"></div>
+    <div class="tile purple small" id="c"></div>
+    <div class="tile white small" id="d"></div>
+  </div>
+<script>
+  fetch('final-icon.svg').then(r=>r.text()).then(svg=>{
+    ['a','b','c','d'].forEach(id => document.getElementById(id).innerHTML = svg);
+  });
+</script>
+</body></html>

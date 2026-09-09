@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ConditionWise — Shield + Bowl Variations</title>
+<style>
+  :root{
+    --purple-light:#f1eef9;
+    --purple-normal:#7259c5;
+    --purple-dark:#564394;
+    --ink:#24193f;
+    --muted:#6d6485;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; padding:64px 24px 96px; background:#ffffff; color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+  h1{font-size:32px; font-weight:600; text-align:center; margin:0 0 6px}
+  .sub{text-align:center; color:var(--muted); font-size:14px; margin-bottom:56px}
+  .grid{
+    max-width:1120px; margin:0 auto; display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:32px;
+  }
+  .card{
+    border:1px solid rgba(114,89,197,0.15); border-radius:20px; padding:28px;
+    display:flex; flex-direction:column; align-items:center; gap:16px;
+  }
+  .row{display:flex; gap:20px; align-items:center; justify-content:center}
+  .icon-tile{
+    width:88px; height:88px; border-radius:20px;
+    background:linear-gradient(155deg, var(--purple-normal), var(--purple-dark));
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 24px -8px rgba(114,89,197,0.5);
+  }
+  .icon-tile svg{width:52px; height:52px; color:#fff}
+  .mono-tile{
+    width:88px; height:88px; border-radius:20px; background:var(--purple-light);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .mono-tile svg{width:52px; height:52px; color:var(--purple-normal)}
+  .small-tile{width:44px; height:44px; border-radius:11px}
+  .small-tile svg{width:26px; height:26px}
+  .label{text-align:center}
+  .label h2{font-size:15px; font-weight:600; margin:0 0 2px; letter-spacing:0.01em}
+  .label p{font-size:13px; color:var(--muted); line-height:1.5; margin:0; max-width:280px}
+  .num{font-family:"SF Mono",Menlo,monospace; font-size:11px; color:var(--purple-normal); letter-spacing:0.08em}
+</style>
+</head>
+<body>
+
+<h1>ConditionWise — Shield + Bowl Variations</h1>
+<p class="sub">Six flat directions built from the shield + bowl + badge idea, no fork</p>
+
+<div class="grid">
+
+  <div class="card">
+    <div class="row">
+      <div class="icon-tile" id="i13"></div>
+      <div class="mono-tile" id="i13b"></div>
+      <div class="icon-tile small-tile" id="i13c"></div>
+    </div>
+    <div class="label">
+      <div class="num">13 — FILLED + CUTOUT</div>
+      <h2>Guarded Bowl (Plus)</h2>
+      <p>Filled shield with a bowl cut into it, plus-badge accent at the shoulder. Reads "protecting your meal, positively."</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div class="icon-tile" id="i14"></div>
+      <div class="mono-tile" id="i14b"></div>
+      <div class="icon-tile small-tile" id="i14c"></div>
+    </div>
+    <div class="label">
+      <div class="num">14 — FILLED + CUTOUT</div>
+      <h2>Guarded Bowl (Check)</h2>
+      <p>Same structure, checkmark badge instead of plus — leans more "verified/safe" than "positive addition."</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div class="icon-tile" id="i15"></div>
+      <div class="mono-tile" id="i15b"></div>
+      <div class="icon-tile small-tile" id="i15c"></div>
+    </div>
+    <div class="label">
+      <div class="num">15 — OUTLINE + SOLID</div>
+      <h2>Open Shield Bowl</h2>
+      <p>Shield as a thin outline instead of solid fill, with a solid bowl sitting inside. Lighter, more modern weight.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div class="icon-tile" id="i16"></div>
+      <div class="mono-tile" id="i16b"></div>
+      <div class="icon-tile small-tile" id="i16c"></div>
+    </div>
+    <div class="label">
+      <div class="num">16 — RING FRAME</div>
+      <h2>Bowl Halo</h2>
+      <p>Adds a thin ring frame around the mark, echoing the circular motif from your reference, without the clutter inside it.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div class="icon-tile" id="i17"></div>
+      <div class="mono-tile" id="i17b"></div>
+      <div class="icon-tile small-tile" id="i17c"></div>
+    </div>
+    <div class="label">
+      <div class="num">17 — FLIPPED HIERARCHY</div>
+      <h2>Bowl First</h2>
+      <p>The bowl becomes the dominant shape; a small shield+plus badge tucks into the corner. Leads with "meal," not "protection."</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div class="icon-tile" id="i18"></div>
+      <div class="mono-tile" id="i18b"></div>
+      <div class="icon-tile small-tile" id="i18c"></div>
+    </div>
+    <div class="label">
+      <div class="num">18 — COMPOUND CUTOUT</div>
+      <h2>Leaf Bowl Shield</h2>
+      <p>Shield with a bowl <em>and</em> a small leaf sprig cut into it together, no separate badge — meal + a touch of "fresh," in one shape.</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const files = {13:'13-guarded-bowl-plus.svg',14:'14-guarded-bowl-check.svg',15:'15-open-shield-bowl.svg',16:'16-bowl-halo.svg',17:'17-bowl-first.svg',18:'18-leaf-bowl-shield.svg'};
+  Object.entries(files).forEach(([n, file]) => {
+    fetch(file).then(r => r.text()).then(svg => {
+      document.getElementById('i'+n).innerHTML = svg;
+      document.getElementById('i'+n+'b').innerHTML = svg;
+      document.getElementById('i'+n+'c').innerHTML = svg;
+    });
+  });
+</script>
+
+</body>
+</html>

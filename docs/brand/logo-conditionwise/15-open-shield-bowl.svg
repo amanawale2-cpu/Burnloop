@@ -1,0 +1,20 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <mask id="m15-badge" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+      <rect width="100" height="100" fill="white"/>
+      <g fill="black">
+        <rect x="85" y="5" width="6" height="14" rx="3"/>
+        <rect x="81" y="9" width="14" height="6" rx="3"/>
+      </g>
+    </mask>
+  </defs>
+  <path fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"
+        d="M 50 6 L 25 17 C 22.5 18.1 21 20.5 21 23.2 L 21 42
+           C 21 63 32 80 50 90 C 68 80 79 63 79 42 L 79 23.2
+           C 79 20.5 77.5 18.1 75 17 Z"/>
+  <g fill="currentColor">
+    <ellipse cx="50" cy="37" rx="16" ry="4"/>
+    <path d="M 34 39 C 34 53 41 60 50 60 C 59 60 66 53 66 39 Z"/>
+  </g>
+  <circle cx="88" cy="12" r="11" fill="currentColor" mask="url(#m15-badge)"/>
+</svg>

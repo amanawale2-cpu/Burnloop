@@ -1,0 +1,188 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --purple-light:#f1eef9;
+    --purple-normal:#7259c5;
+    --purple-dark:#564394;
+    --ink:#24193f;
+    --muted:#6d6485;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; padding:56px 24px 96px; background:#fff; color:var(--ink);
+    font-family:-apple-system,Helvetica,Arial,sans-serif;
+  }
+  h1{font-size:26px; font-weight:700; text-align:center; margin:0 0 4px}
+  .sub{text-align:center; color:var(--muted); font-size:13px; margin-bottom:44px}
+  .section-label{
+    max-width:1080px; margin:48px auto 18px; font-family:"SF Mono",Menlo,monospace;
+    font-size:11px; letter-spacing:0.1em; color:var(--purple-normal); text-transform:uppercase;
+  }
+  .grid{
+    max-width:1080px; margin:0 auto; display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:28px;
+  }
+  .card{
+    border:1px solid rgba(114,89,197,0.15); border-radius:20px; padding:26px;
+    display:flex; flex-direction:column; align-items:center; gap:14px;
+  }
+  .tile{
+    width:150px; height:150px; border-radius:36px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .tile svg{width:88px; height:88px; color:#fff}
+  .purple-grad{background:linear-gradient(155deg,#9278e7,#564394); box-shadow:0 16px 32px -10px rgba(114,89,197,.5)}
+  .white-tile{background:#fff; border:1px solid #eee}
+  .light-tile{background:var(--purple-light)}
+  .light-tile svg{color:var(--purple-normal)}
+  .small-row{display:flex; gap:12px}
+  .small-tile{width:44px; height:44px; border-radius:12px}
+  .small-tile svg{width:26px; height:26px}
+  .label h2{font-size:14px; font-weight:600; margin:0}
+  .label p{font-size:12px; color:var(--muted); margin:4px 0 0; text-align:center; max-width:220px}
+
+  .wm{font-family:'Baloo 2',Arial,sans-serif; font-weight:800; display:inline-flex; align-items:baseline}
+  .bang{position:relative; display:inline-block}
+  .bang .dot{width:0.16em; height:0.16em; border-radius:50%; position:absolute; left:50%; bottom:-0.02em; transform:translateX(-50%)}
+  .bang .stem{width:0.16em; border-radius:0.08em; display:inline-block; margin:0 0.02em}
+
+  .lockup-tile{
+    width:280px; padding:24px; border-radius:24px; display:flex; align-items:center; gap:16px;
+  }
+  .lockup-tile.stacked{flex-direction:column; width:200px; justify-content:center}
+  .icon-chip{width:56px; height:56px; border-radius:15px; flex-shrink:0; display:flex; align-items:center; justify-content:center; background:linear-gradient(155deg,#9278e7,#564394)}
+  .icon-chip svg{width:34px; height:34px; color:#fff}
+</style></head>
+<body>
+
+<h1>Melert — Strongest Directions, Pushed Further</h1>
+<p class="sub">Bowl + alert badge (highest-rated concept) and the Me! bang-as-L wordmark</p>
+
+<div class="section-label">Icon — bowl + alert badge</div>
+<div class="grid">
+  <div class="card">
+    <div class="tile purple-grad" id="i21"></div>
+    <div class="small-row">
+      <div class="tile white-tile small-tile" id="i21b"></div>
+      <div class="tile light-tile small-tile" id="i21c"></div>
+    </div>
+    <div class="label">
+      <h2>21 — Dark badge</h2>
+      <p>Navy badge for max contrast against the purple gradient. The strongest-testing composition from the last round.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="tile purple-grad" id="i22"></div>
+    <div class="small-row">
+      <div class="tile white-tile small-tile" id="i22b"></div>
+      <div class="tile light-tile small-tile" id="i22c"></div>
+    </div>
+    <div class="label">
+      <h2>22 — Red alert badge</h2>
+      <p>Same composition, badge in your brand's reserved alert color instead of navy — literal "this is an alert" signal.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="tile purple-grad" id="i23"></div>
+    <div class="small-row">
+      <div class="tile white-tile small-tile" id="i23b"></div>
+      <div class="tile light-tile small-tile" id="i23c"></div>
+    </div>
+    <div class="label">
+      <h2>23 — Bolder badge, smaller bowl</h2>
+      <p>Badge scaled up and bowl scaled down slightly — leads with the alert instead of the meal.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section-label">Wordmark — Me!ert</div>
+<div class="grid">
+  <div class="card">
+    <div class="tile white-tile" style="width:220px;height:110px;border-radius:24px">
+      <div class="wm" style="font-size:44px; color:var(--ink)">
+        Me<span class="bang"><span class="stem" style="height:0.62em;background:var(--purple-normal);vertical-align:0.02em"></span><span class="dot" style="background:var(--purple-normal)"></span></span>ert
+      </div>
+    </div>
+    <div class="label">
+      <h2>Dark on white</h2>
+      <p>Primary wordmark for headers, docs, and light backgrounds.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="tile purple-grad" style="width:220px;height:110px;border-radius:24px">
+      <div class="wm" style="font-size:44px; color:#fff">
+        Me<span class="bang"><span class="stem" style="height:0.62em;background:#fff;vertical-align:0.02em"></span><span class="dot" style="background:#fff"></span></span>ert
+      </div>
+    </div>
+    <div class="label">
+      <h2>White on purple</h2>
+      <p>Reversed for footers, splash screens, dark surfaces.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="tile purple-grad" style="width:150px;height:150px;border-radius:36px">
+      <div class="wm" style="font-size:56px; color:#fff">
+        Me<span class="bang"><span class="stem" style="height:0.62em;background:#fff;vertical-align:0.02em"></span><span class="dot" style="background:#fff"></span></span>
+      </div>
+    </div>
+    <div class="label">
+      <h2>"Me!" standalone app icon</h2>
+      <p>No icon needed — the wordmark alone works as a full app-icon tile.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section-label">Lockups — icon + wordmark, paired for real</div>
+<div class="grid">
+  <div class="card">
+    <div class="tile white-tile lockup-tile">
+      <div class="icon-chip" id="lock-icon-h"></div>
+      <div class="wm" style="font-size:32px; color:var(--ink)">
+        Me<span class="bang"><span class="stem" style="height:0.62em;background:var(--purple-normal);vertical-align:0.02em"></span><span class="dot" style="background:var(--purple-normal)"></span></span>ert
+      </div>
+    </div>
+    <div class="label">
+      <h2>Horizontal lockup</h2>
+      <p>Nav bar / header use — icon 21 paired with the wordmark.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="tile white-tile lockup-tile stacked">
+      <div class="icon-chip" style="width:64px;height:64px;border-radius:17px" id="lock-icon-v"></div>
+      <div class="wm" style="font-size:28px; color:var(--ink)">
+        Me<span class="bang"><span class="stem" style="height:0.62em;background:var(--purple-normal);vertical-align:0.02em"></span><span class="dot" style="background:var(--purple-normal)"></span></span>ert
+      </div>
+    </div>
+    <div class="label">
+      <h2>Stacked lockup</h2>
+      <p>App Store listing / splash screen use.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const svgs = {
+    21: `<g fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"><path d="M 33 50 C 31 46 35 43 33 38"/><path d="M 45 50 C 43 46 47 43 45 38"/><path d="M 57 50 C 55 46 59 43 57 38"/></g><g fill="currentColor"><rect x="25" y="54" width="40" height="4.5" rx="2.25"/><path d="M 23 58.5 A 22 22 0 0 0 67 58.5 Z"/></g><circle cx="67" cy="63" r="14" fill="#241a45"/><rect x="65.3" y="54.5" width="3.4" height="10" rx="1.7" fill="#fff"/><circle cx="67" cy="69" r="2.1" fill="#fff"/>`,
+    22: `<g fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"><path d="M 33 50 C 31 46 35 43 33 38"/><path d="M 45 50 C 43 46 47 43 45 38"/><path d="M 57 50 C 55 46 59 43 57 38"/></g><g fill="currentColor"><rect x="25" y="54" width="40" height="4.5" rx="2.25"/><path d="M 23 58.5 A 22 22 0 0 0 67 58.5 Z"/></g><circle cx="67" cy="63" r="14" fill="#dc2626"/><rect x="65.3" y="54.5" width="3.4" height="10" rx="1.7" fill="#fff"/><circle cx="67" cy="69" r="2.1" fill="#fff"/>`,
+    23: `<g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"><path d="M 30 48 C 28 44 32 41 30 36"/><path d="M 41 48 C 39 44 43 41 41 36"/><path d="M 52 48 C 50 44 54 41 52 36"/></g><g fill="currentColor"><rect x="22" y="52" width="36" height="4.2" rx="2.1"/><path d="M 20.5 56.2 A 19.5 19.5 0 0 0 59.5 56.2 Z"/></g><circle cx="65" cy="61" r="17" fill="#241a45"/><rect x="63" y="51" width="4" height="12" rx="2" fill="#fff"/><circle cx="65" cy="68.5" r="2.4" fill="#fff"/>`
+  };
+  function svg(inner){ return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">${inner}</svg>`; }
+  [21,22,23].forEach(n => {
+    document.getElementById('i'+n).innerHTML = svg(svgs[n]);
+    document.getElementById('i'+n+'b').innerHTML = svg(svgs[n]);
+    document.getElementById('i'+n+'c').innerHTML = svg(svgs[n]);
+  });
+  document.getElementById('lock-icon-h').innerHTML = svg(svgs[21]);
+  document.getElementById('lock-icon-v').innerHTML = svg(svgs[21]);
+</script>
+
+</body></html>
