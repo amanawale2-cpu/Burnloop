@@ -1,0 +1,30 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g26" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9278e7"/>
+      <stop offset="100%" stop-color="#564394"/>
+    </linearGradient>
+    <mask id="m26-cutout" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+      <rect width="100" height="100" fill="white"/>
+      <g fill="black" transform="translate(0,-2)">
+        <g transform="translate(35,52) rotate(-6)">
+          <rect x="-5.6" y="-25" width="2.1" height="11" rx="1.05"/>
+          <rect x="-1.1" y="-25" width="2.1" height="11" rx="1.05"/>
+          <rect x="3.4" y="-25" width="2.1" height="11" rx="1.05"/>
+          <path d="M -5.6 -14 L 5.6 -14 L 1.6 -9 L -1.6 -9 Z"/>
+          <rect x="-1.6" y="-9" width="3.2" height="33" rx="1.6"/>
+        </g>
+        <g transform="translate(55,52) rotate(6)">
+          <ellipse cx="0" cy="-17" rx="5.8" ry="8.5"/>
+          <rect x="-1.6" y="-9" width="3.2" height="33" rx="1.6"/>
+        </g>
+      </g>
+    </mask>
+  </defs>
+
+  <circle cx="45" cy="50" r="31" fill="url(#g26)" mask="url(#m26-cutout)"/>
+
+  <circle cx="80" cy="24" r="11" fill="#dc2626"/>
+  <rect x="78.4" y="16.5" width="3.2" height="7.5" rx="1.6" fill="#ffffff"/>
+  <circle cx="80" cy="29" r="1.7" fill="#ffffff"/>
+</svg>

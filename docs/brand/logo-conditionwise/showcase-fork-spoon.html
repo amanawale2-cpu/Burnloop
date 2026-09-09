@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Melert — Fork + Spoon + Alert Variations</title>
+<style>
+  :root{
+    --purple-light:#f1eef9;
+    --purple-normal:#7259c5;
+    --purple-dark:#564394;
+    --ink:#24193f;
+    --muted:#6d6485;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; padding:64px 24px 96px; background:#fff; color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+  h1{font-size:30px; font-weight:600; text-align:center; margin:0 0 6px}
+  .sub{text-align:center; color:var(--muted); font-size:14px; margin-bottom:52px}
+  .grid{
+    max-width:1150px; margin:0 auto; display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:30px;
+  }
+  .card{
+    border:1px solid rgba(114,89,197,0.15); border-radius:20px; padding:26px;
+    display:flex; flex-direction:column; align-items:center; gap:14px;
+  }
+  .row{display:flex; gap:16px; align-items:center; justify-content:center}
+  .icon-tile{
+    width:96px; height:96px; border-radius:22px;
+    display:flex; align-items:center; justify-content:center;
+    background:#ffffff; border:1px solid #eee;
+    box-shadow:0 10px 24px -8px rgba(114,89,197,0.25);
+  }
+  .icon-tile svg{width:58px; height:58px; color:var(--ink)}
+  .mono-tile{
+    width:96px; height:96px; border-radius:22px; background:var(--purple-light);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .mono-tile svg{width:58px; height:58px; color:var(--purple-normal)}
+  .small-tile{width:46px; height:46px; border-radius:12px}
+  .small-tile svg{width:28px; height:28px}
+  .num{font-family:"SF Mono",Menlo,monospace; font-size:11px; color:var(--purple-normal); letter-spacing:0.08em; text-align:center}
+  .label h2{font-size:15px; font-weight:600; margin:4px 0 2px; text-align:center}
+  .label p{font-size:13px; color:var(--muted); line-height:1.5; margin:0; max-width:290px; text-align:center}
+</style>
+</head>
+<body>
+
+<h1>Fork + Spoon + Alert — 5 Variations</h1>
+<p class="sub">Five compositions, one required to be a crossed fork+spoon with alert, in gradient</p>
+
+<div class="grid">
+
+  <div class="card">
+    <div class="row">
+      <div class="icon-tile" id="i24"></div>
+      <div class="icon-tile small-tile" id="i24b"></div>
+    </div>
+    <div class="label">
+      <div class="num">24 — CROSSED, GRADIENT (AS REQUESTED)</div>
+      <h2>Crossed Fork &amp; Spoon</h2>
+      <p>Classic crossed-cutlery pose, purple gradient fill, alert badge sitting right at the intersection.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div class="icon-tile" id="i25"></div>
+      <div class="icon-tile small-tile" id="i25b"></div>
+    </div>
+    <div class="label">
+      <div class="num">25 — SIDE BY SIDE, FLAT</div>
+      <h2>Standing Together</h2>
+      <p>Fork and spoon upright side by side, flat single-color fill, red alert-triangle badge at the corner.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div class="icon-tile" id="i26"></div>
+      <div class="icon-tile small-tile" id="i26b"></div>
+    </div>
+    <div class="label">
+      <div class="num">26 — NEGATIVE-SPACE CUTOUT</div>
+      <h2>Cutlery on a Plate</h2>
+      <p>Fork and spoon cut as negative space from a solid gradient plate, small red alert dot at the corner.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div class="icon-tile" id="i27"></div>
+      <div class="icon-tile small-tile" id="i27b"></div>
+    </div>
+    <div class="label">
+      <div class="num">27 — CONTAINED IN THE ALERT SIGN</div>
+      <h2>Cutlery Inside the Triangle</h2>
+      <p>The alert triangle itself is the dominant shape (amber-to-red gradient); fork, spoon, and a dot are cut into it.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div class="icon-tile" id="i28"></div>
+      <div class="icon-tile small-tile" id="i28b"></div>
+    </div>
+    <div class="label">
+      <div class="num">28 — MONOLINE, QUIET</div>
+      <h2>Thin Crossed Outline</h2>
+      <p>Same crossed pose as #24 but as thin outline strokes with a small solid dot accent — the quiet alternative.</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const files = {24:'24-fork-spoon-crossed-gradient.svg',25:'25-fork-spoon-side-by-side.svg',26:'26-fork-spoon-plate-cutout.svg',27:'27-fork-spoon-in-triangle.svg',28:'28-fork-spoon-monoline.svg'};
+  Object.entries(files).forEach(([n, file]) => {
+    fetch(file).then(r => r.text()).then(svg => {
+      document.getElementById('i'+n).innerHTML = svg;
+      document.getElementById('i'+n+'b').innerHTML = svg;
+    });
+  });
+</script>
+
+</body>
+</html>

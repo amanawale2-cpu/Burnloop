@@ -1,0 +1,27 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g27" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </linearGradient>
+    <mask id="m27-cutout" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+      <rect width="100" height="100" fill="white"/>
+      <g fill="black">
+        <g transform="translate(41,58) rotate(-6) scale(0.8)">
+          <rect x="-5.6" y="-25" width="2.1" height="11" rx="1.05"/>
+          <rect x="-1.1" y="-25" width="2.1" height="11" rx="1.05"/>
+          <rect x="3.4" y="-25" width="2.1" height="11" rx="1.05"/>
+          <path d="M -5.6 -14 L 5.6 -14 L 1.6 -9 L -1.6 -9 Z"/>
+          <rect x="-1.6" y="-9" width="3.2" height="33" rx="1.6"/>
+        </g>
+        <g transform="translate(59,58) rotate(6) scale(0.8)">
+          <ellipse cx="0" cy="-17" rx="5.8" ry="8.5"/>
+          <rect x="-1.6" y="-9" width="3.2" height="33" rx="1.6"/>
+        </g>
+        <circle cx="50" cy="80" r="2.6"/>
+      </g>
+    </mask>
+  </defs>
+
+  <path d="M 50 8 L 85 88 L 15 88 Z" fill="url(#g27)" mask="url(#m27-cutout)"/>
+</svg>
